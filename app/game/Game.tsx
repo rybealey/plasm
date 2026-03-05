@@ -5,8 +5,8 @@ import { GameState, Camera, Player, PlayerSkin, GAME_CONFIG } from "./types";
 import { createInitialState, tick, splitPlayer, ejectMass } from "./engine";
 import { render, getCamera } from "./renderer";
 import Leaderboard from "./Leaderboard";
-import BackButton from "@/components/back-button";
-import ChatWindow from "@/components/chat-window";
+import BackButton from "@/components/backButton";
+import ChatWindow from "@/components/chatWindow";
 
 interface GameProps {
   playerName: string;

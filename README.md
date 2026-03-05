@@ -66,35 +66,42 @@ A browser-based multiplayer cell-eating game built with Next.js, HTML5 Canvas, a
 ## Project Structure
 
 ```
+proxy.ts                 # Next.js 16 proxy (session refresh)
+
 app/
-  page.tsx              # Login page (magic link + guest)
-  layout.tsx            # Root layout with dark theme
+  page.tsx               # Login page (magic link + guest)
+  layout.tsx             # Root layout with dark theme
   auth/
-    callback/           # Supabase auth callback handler
-    confirm/            # Email confirmation route
-  profile/page.tsx      # Dashboard with stats, matches, friends
-  skins/page.tsx        # Skin store & inventory management
-  friends/page.tsx      # Friends placeholder page
-  start/page.tsx        # Game lobby (name input, play button)
+    callback/route.ts    # Supabase auth callback handler
+  profile/page.tsx       # Dashboard with stats, matches, friends
+  skins/page.tsx         # Skin store & inventory management
+  friends/page.tsx       # Friends placeholder page
+  start/page.tsx         # Game lobby (name input, play button)
   game/
-    Game.tsx             # Main game component (canvas + loop)
-    engine.ts            # Game physics, AI, splitting, merging
-    renderer.ts          # Canvas rendering (cells, food, gradients)
-    Leaderboard.tsx      # In-game leaderboard overlay
-    types.ts             # Type definitions & game config
+    Game.tsx              # Main game component (canvas + loop)
+    engine.ts             # Game physics, AI, splitting, merging
+    renderer.ts           # Canvas rendering (cells, food, gradients)
+    Leaderboard.tsx       # In-game leaderboard overlay
+    types.ts              # Type definitions & game config
 
 components/
-  sidebar.tsx            # Navigation sidebar with skin preview
-  chat-window.tsx        # Real-time chat (Supabase Broadcast)
-  purchase-modal.tsx     # Skin purchase confirmation modal
-  back-button.tsx        # Navigation back button
-  ui/                    # shadcn/ui primitives (button, input, card, etc.)
+  sidebar.tsx             # Navigation sidebar with equipped skin preview
+  chat-window.tsx         # Real-time chat (Supabase Realtime Broadcast)
+  purchase-modal.tsx      # Skin purchase confirmation modal
+  back-button.tsx         # Navigation back button
+  ui/                     # shadcn/ui primitives
+    badge.tsx
+    button.tsx
+    card.tsx
+    input.tsx
+    sonner.tsx            # Custom dark-themed toast notifications
 
 lib/
+  utils.ts               # Tailwind merge utility
   supabase/
-    client.ts            # Browser Supabase client
-    server.ts            # Server Supabase client
-    middleware.ts         # Session refresh middleware
+    client.ts             # Browser Supabase client
+    server.ts             # Server Supabase client
+    middleware.ts          # Session refresh helper (used by proxy.ts)
 ```
 
 ---
@@ -134,7 +141,7 @@ Both tables have Row Level Security (RLS) policies scoped to the authenticated u
 
 ```bash
 git clone <repo-url>
-cd agar
+cd plasm
 npm install
 ```
 

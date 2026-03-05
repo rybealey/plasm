@@ -13,7 +13,7 @@ import {
   CardHeader,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import BackButton from "@/components/back-button";
+import BackButton from "@/components/backButton";
 
 const Game = dynamic(() => import("../game/Game"), { ssr: false });
 

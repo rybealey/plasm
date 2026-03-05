@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import type { User } from "@supabase/supabase-js";
 import Sidebar from "@/components/sidebar";
-import PurchaseModal from "@/components/purchase-modal";
+import PurchaseModal from "@/components/purchaseModal";
 import { toast } from "sonner";
 import { Coins } from "lucide-react";
 
