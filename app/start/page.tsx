@@ -84,7 +84,7 @@ export default function GamePage() {
   }, []);
 
   if (screen === "playing") {
-    return <Game playerName={playerName || "Player"} onDeath={handleDeath} isSuperAdmin={isSuperAdmin} skin={stableSkin} />;
+    return <Game playerName={playerName || "Player"} onDeath={handleDeath} isSuperAdmin={isSuperAdmin} isLoggedIn={!!userRef.current} skin={stableSkin} />;
   }
 
   return (

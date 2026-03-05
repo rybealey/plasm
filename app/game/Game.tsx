@@ -12,10 +12,11 @@ interface GameProps {
   playerName: string;
   onDeath: (score: number) => void;
   isSuperAdmin?: boolean;
+  isLoggedIn?: boolean;
   skin?: PlayerSkin;
 }
 
-export default function Game({ playerName, onDeath, isSuperAdmin, skin }: GameProps) {
+export default function Game({ playerName, onDeath, isSuperAdmin, isLoggedIn, skin }: GameProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const stateRef = useRef<GameState | null>(null);
   const cameraRef = useRef<Camera>({
@@ -143,7 +144,7 @@ export default function Game({ playerName, onDeath, isSuperAdmin, skin }: GamePr
         humanPlayerId={leaderboardData.humanId}
         isHumanSuperAdmin={isSuperAdmin}
       />
-      <ChatWindow playerName={playerName} />
+      {isLoggedIn && <ChatWindow playerName={playerName} />}
     </div>
   );
 }
