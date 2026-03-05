@@ -13656,6 +13656,7 @@
               "textAlign": "center",
               "fontFamily": "Inter",
               "fontSize": 20,
+              "fontWeight": "normal",
               "letterSpacing": 4
             },
             {
