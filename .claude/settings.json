@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:en.wikipedia.org)",
+      "Bash(npm run build)",
+      "Bash(npx shadcn@latest init -d --yes)",
+      "Bash(npx shadcn@latest add button input card badge -y)",
+      "Bash(ls /Users/rybealey/Documents/Personal/Projects/agar/next.config.*)",
+      "Bash(npm install @supabase/supabase-js @supabase/ssr)",
+      "Bash(supabase --version)",
+      "Bash(npx supabase --version)",
+      "Bash(npx supabase projects list)",
+      "Bash(npx supabase:*)",
+      "Bash(npx tsc --noEmit)",
+      "Bash(npx shadcn@latest add sonner --yes)"
+    ],
+    "additionalDirectories": [
+      "/Users/rybealey/Documents/Personal/Projects/agar/app"
+    ]
+  }
+}
